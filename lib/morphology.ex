@@ -10,6 +10,9 @@ defmodule Morphology do
   So, you want to give it the xor_mimic parts. The scape and interactor will be derived from something
   akin to sensor = s.name, which will return an atom. So the macro must receive an atom and call
   a corresponding function. This will be doable because the AST in elixir uses atoms....
+
+
+  There is a sensor created by Morphology.xor_mimic... how to call this automatically.
   """
   defmacro morphology(morph, interactor) do
   end
