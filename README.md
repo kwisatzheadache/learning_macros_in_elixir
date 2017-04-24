@@ -2,6 +2,10 @@
 
 Like the name says, I need to learn how to write macros. I'm going to start with the sensor/morphology issue from my nn project. 
 I need a bit of code that will receive the name of a sensor, and call a function Sensor.name.... Pretty simple stuff. Let's see how it goes.
+
+First macro is `Sensor.type`, which receives the `sensor_name` and inserts it
+into the AST for the `Sensor` module, such that `Sensor.sensor_name` is 
+called. If `sensor_name` is not an atom, an error message is thrown.
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
