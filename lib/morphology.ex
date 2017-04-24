@@ -13,6 +13,17 @@ defmodule Morphology do
 
 
   There is a sensor created by Morphology.xor_mimic... how to call this automatically.
+
+  We'd like to be able to create the genotype, corresponding phenotype, and train it with one call.
+  Train.ffnn(name, scape, hld, generations \\ 100)
+
+  The first step is to create the genotype, which looks like this:
+
+  cortex = %Cortex{id: Generate.id(), n_ids: nil, sensors: nil, actuators: nil, scape: nil, name: nil}
+  n_ids = [id1, id2, id3,... idn]
+  sensors = [scape_s1, scape_s2, ...]
+  actuators = [scape_a1, scape_a2, ...]
+
   """
   defmacro morphology(morph, interactor) do
   end
