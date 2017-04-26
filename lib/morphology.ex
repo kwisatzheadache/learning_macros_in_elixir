@@ -25,7 +25,17 @@ defmodule Morphology do
   actuators = [scape_a1, scape_a2, ...]
 
   """
-  defmacro morphology(morph, interactor) do
+  defmacro name(morph, interactor) do
+  end
+
+  defmacro type(name, interactor) do
+    IO.puts "macro is being called."
+    case is_atom(name) do
+      true -> ast = {{:., [], [{:__aliases__, [alias: false], [:Morphology]}, name]}, [], [interactor]}
+           ast
+      false -> IO.puts "name must be an atom"
+
+    end
   end
 
   def xor_mimic do
