@@ -28,16 +28,6 @@ defmodule Morphology do
   defmacro name(morph, interactor) do
   end
 
-  defmacro type(name, interactor) do
-    IO.puts "macro is being called."
-    case is_atom(name) do
-      true -> ast = {{:., [], [{:__aliases__, [alias: false], [:Sensor]}, name]}, [], []}
-           ast
-      false -> IO.puts "name must be an atom"
-
-    end
-  end
-
   def xor_mimic do
   end
 
