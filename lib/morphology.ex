@@ -31,7 +31,7 @@ defmodule Morphology do
   defmacro type(name, interactor) do
     IO.puts "macro is being called."
     case is_atom(name) do
-      true -> ast = {{:., [], [{:__aliases__, [alias: false], [:Morphology]}, name]}, [], [interactor]}
+      true -> ast = {{:., [], [{:__aliases__, [alias: false], [:Sensor]}, name]}, [], []}
            ast
       false -> IO.puts "name must be an atom"
 
