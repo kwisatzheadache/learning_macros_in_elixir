@@ -4,8 +4,19 @@ defmodule Sensor do
   defstruct id: nil, name: nil, vl: nil, cx_id: nil
   require Morphology
 
+  defmacro easy(name) do
+    quote do
+      {{:., [], [{:__aliases__, [alias: false], [:Sensor]}, unquote(name)]}, [], []}
+    end
+  end
+
   def create(sensor_name) do
     Morphology.type(sensor_name, :sensor)
+  end
+
+  def create_easy(name) do
+    ast = easy(name)
+    Code.eval_quoted(ast)
   end
 
   #in particular, here is an example of what I need to do with a macro. To pull the Sensor.____
